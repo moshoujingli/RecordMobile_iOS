@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
+@interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
-@interface ViewController : UIViewController
 
 
 @end

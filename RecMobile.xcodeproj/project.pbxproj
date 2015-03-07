@@ -15,6 +15,9 @@
 		6ADBAD821AA2B4BA00104B81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ADBAD811AA2B4BA00104B81 /* Images.xcassets */; };
 		6ADBAD851AA2B4BA00104B81 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ADBAD831AA2B4BA00104B81 /* LaunchScreen.xib */; };
 		6ADBAD911AA2B4BA00104B81 /* RecMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBAD901AA2B4BA00104B81 /* RecMobileTests.m */; };
+		6ADBAD9C1AA3DBE700104B81 /* MotionEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBAD9B1AA3DBE700104B81 /* MotionEvent.m */; };
+		6ADBAD9F1AA3DBE800104B81 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBAD9E1AA3DBE800104B81 /* Capture.m */; };
+		AD1A8030558A38913FE34117 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC4B0C64572DC271E59AF4A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AC4B0C64572DC271E59AF4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3002CBD3AAC5EEA57FB2F09B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6ADBAD6E1AA2B4BA00104B81 /* RecMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADBAD721AA2B4BA00104B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ADBAD731AA2B4BA00104B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +47,11 @@
 		6ADBAD8A1AA2B4BA00104B81 /* RecMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADBAD8F1AA2B4BA00104B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ADBAD901AA2B4BA00104B81 /* RecMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecMobileTests.m; sourceTree = "<group>"; };
+		6ADBAD9A1AA3DBE700104B81 /* MotionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionEvent.h; sourceTree = "<group>"; };
+		6ADBAD9B1AA3DBE700104B81 /* MotionEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEvent.m; sourceTree = "<group>"; };
+		6ADBAD9D1AA3DBE800104B81 /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
+		6ADBAD9E1AA3DBE800104B81 /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
+		E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1A8030558A38913FE34117 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +73,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18F09D6CA813144A4C187506 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */,
+				3002CBD3AAC5EEA57FB2F09B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E0CC00AA91070086C7ED820 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AC4B0C64572DC271E59AF4A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6ADBAD651AA2B4BA00104B81 = {
 			isa = PBXGroup;
 			children = (
 				6ADBAD701AA2B4BA00104B81 /* RecMobile */,
 				6ADBAD8D1AA2B4BA00104B81 /* RecMobileTests */,
 				6ADBAD6F1AA2B4BA00104B81 /* Products */,
+				18F09D6CA813144A4C187506 /* Pods */,
+				4E0CC00AA91070086C7ED820 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +121,10 @@
 				6ADBAD811AA2B4BA00104B81 /* Images.xcassets */,
 				6ADBAD831AA2B4BA00104B81 /* LaunchScreen.xib */,
 				6ADBAD781AA2B4BA00104B81 /* RecMobile.xcdatamodeld */,
+				6ADBAD9D1AA3DBE800104B81 /* Capture.h */,
+				6ADBAD9E1AA3DBE800104B81 /* Capture.m */,
+				6ADBAD9A1AA3DBE700104B81 /* MotionEvent.h */,
+				6ADBAD9B1AA3DBE700104B81 /* MotionEvent.m */,
 				6ADBAD711AA2B4BA00104B81 /* Supporting Files */,
 			);
 			path = RecMobile;
@@ -129,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6ADBAD941AA2B4BA00104B81 /* Build configuration list for PBXNativeTarget "RecMobile" */;
 			buildPhases = (
+				A116BA587DE4877C569FB828 /* Check Pods Manifest.lock */,
 				6ADBAD6A1AA2B4BA00104B81 /* Sources */,
 				6ADBAD6B1AA2B4BA00104B81 /* Frameworks */,
 				6ADBAD6C1AA2B4BA00104B81 /* Resources */,
+				0751116CB1AC181229D159E4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +253,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0751116CB1AC181229D159E4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A116BA587DE4877C569FB828 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6ADBAD6A1AA2B4BA00104B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,6 +293,8 @@
 			files = (
 				6ADBAD771AA2B4BA00104B81 /* AppDelegate.m in Sources */,
 				6ADBAD7A1AA2B4BA00104B81 /* RecMobile.xcdatamodeld in Sources */,
+				6ADBAD9F1AA3DBE800104B81 /* Capture.m in Sources */,
+				6ADBAD9C1AA3DBE700104B81 /* MotionEvent.m in Sources */,
 				6ADBAD7D1AA2B4BA00104B81 /* ViewController.m in Sources */,
 				6ADBAD741AA2B4BA00104B81 /* main.m in Sources */,
 			);
@@ -345,21 +416,25 @@
 		};
 		6ADBAD951AA2B4BA00104B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RecMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ef19c1ae-0bdc-406a-9605-471f15b4b2ac";
 			};
 			name = Debug;
 		};
 		6ADBAD961AA2B4BA00104B81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3002CBD3AAC5EEA57FB2F09B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RecMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ef19c1ae-0bdc-406a-9605-471f15b4b2ac";
 			};
 			name = Release;
 		};
@@ -416,6 +491,7 @@
 				6ADBAD961AA2B4BA00104B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6ADBAD971AA2B4BA00104B81 /* Build configuration list for PBXNativeTarget "RecMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +500,7 @@
 				6ADBAD991AA2B4BA00104B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
