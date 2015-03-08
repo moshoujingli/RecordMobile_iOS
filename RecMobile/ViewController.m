@@ -14,6 +14,7 @@
 @property (strong,nonatomic)UITableView* recordTable;
 @property (strong,nonatomic)UILabel *optionNameLabel;
 @property (strong,nonatomic)RecordManager *recordManager;
+@property (strong,nonatomic)NSDateFormatter *dateFormatter;
 @end
 
 @implementation ViewController
@@ -55,32 +56,37 @@
     }];
     
     [self.recordTable mas_makeConstraints:^(MASConstraintMaker *make){
-        make.top.equalTo(self.view);
+        make.top.equalTo(self.view).with.offset(20);
         make.bottom.equalTo(self.notificationSwitch.mas_top);
         make.leading.equalTo(self.view);
         make.trailing.equalTo(self.view);
     }];
 
-
-    
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [self.dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[self.recordManager getRecords]count];
+    NSInteger count = [[self.recordManager getRecords]count];
+    return count;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *date = [((MotionEvent*)[self.recordManager getRecords][indexPath.row]).created description];
+    MotionEvent* e = [self.recordManager getRecords][indexPath.row];
+    NSString *date = [self.dateFormatter stringFromDate:e.created];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
+    RecordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
     if (!cell) {
-        cell  = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_IDENTIFIER];
+        cell  = [[RecordTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_IDENTIFIER];
     }
     cell.textLabel.text = date;
-    
+    cell.motionEvent = e;
     return cell;
 }
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     [self.recordTable reloadData];
 }
 

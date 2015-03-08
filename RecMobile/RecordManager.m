@@ -31,7 +31,8 @@
         self.objCtx = [delegate managedObjectContext];
         self.objMdl = [delegate managedObjectModel];
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
-        [format setDateFormat:@"yyyyMMddHHmmssZ"];
+        [format setDateFormat:@"yyyyMMddHHmmss"];
+        self.formatter = format;
     }
     return self;
 }
@@ -45,9 +46,10 @@
     e.readed = [NSNumber numberWithBool:NO];
     NSURL *pathURL = [NSURL URLWithString:e.url];
     NSString *fileName = pathURL.lastPathComponent;
-    NSString *createdTime = [[fileName substringToIndex:[fileName length]-3]stringByAppendingString:@"+0000"];
+    NSString *createdTime = [[fileName substringToIndex:[fileName length]-3]stringByAppendingString:@""];
     
     NSDate *parsed = [self.formatter dateFromString:createdTime];
+    NSLog(@"%@ %@",createdTime,parsed.description);
     e.created = parsed;
     NSError* error;
     [self.objCtx save:&error];
@@ -62,7 +64,7 @@
     [fetchRequest setEntity:entity];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"createdTime" ascending:NO];
+                                        initWithKey:@"created" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     NSError *error = nil;

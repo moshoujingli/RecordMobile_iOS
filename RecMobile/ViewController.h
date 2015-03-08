@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 #import "RecordManager.h"
+#import "RecordTableViewCell.h"
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 

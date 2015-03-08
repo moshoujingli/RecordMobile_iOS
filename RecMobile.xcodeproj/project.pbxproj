@@ -18,6 +18,7 @@
 		6ADBADA31AAB737700104B81 /* RecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA21AAB737700104B81 /* RecordManager.m */; };
 		6ADBADA61AAC033F00104B81 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA51AAC033F00104B81 /* Capture.m */; };
 		6ADBADA91AAC033F00104B81 /* MotionEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA81AAC033F00104B81 /* MotionEvent.m */; };
+		6ADBADAD1AACA46100104B81 /* RecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */; };
 		AD1A8030558A38913FE34117 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC4B0C64572DC271E59AF4A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		6ADBADA51AAC033F00104B81 /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
 		6ADBADA71AAC033F00104B81 /* MotionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionEvent.h; sourceTree = "<group>"; };
 		6ADBADA81AAC033F00104B81 /* MotionEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEvent.m; sourceTree = "<group>"; };
+		6ADBADAB1AACA46100104B81 /* RecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTableViewCell.h; sourceTree = "<group>"; };
+		6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewCell.m; sourceTree = "<group>"; };
 		E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +119,7 @@
 		6ADBAD701AA2B4BA00104B81 /* RecMobile */ = {
 			isa = PBXGroup;
 			children = (
+				6ADBADAA1AACA41E00104B81 /* TableComp */,
 				6ADBADA01AAB730D00104B81 /* Model */,
 				6ADBAD751AA2B4BA00104B81 /* AppDelegate.h */,
 				6ADBAD761AA2B4BA00104B81 /* AppDelegate.m */,
@@ -167,6 +171,15 @@
 				6ADBADA21AAB737700104B81 /* RecordManager.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6ADBADAA1AACA41E00104B81 /* TableComp */ = {
+			isa = PBXGroup;
+			children = (
+				6ADBADAB1AACA46100104B81 /* RecordTableViewCell.h */,
+				6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */,
+			);
+			name = TableComp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +319,7 @@
 			files = (
 				6ADBADA31AAB737700104B81 /* RecordManager.m in Sources */,
 				6ADBAD771AA2B4BA00104B81 /* AppDelegate.m in Sources */,
+				6ADBADAD1AACA46100104B81 /* RecordTableViewCell.m in Sources */,
 				6ADBADA61AAC033F00104B81 /* Capture.m in Sources */,
 				6ADBADA91AAC033F00104B81 /* MotionEvent.m in Sources */,
 				6ADBAD7A1AA2B4BA00104B81 /* RecMobile.xcdatamodeld in Sources */,
