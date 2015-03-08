@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
-
+#define CELL_IDENTIFIER @"ci"
 @interface ViewController ()
 @property (strong,nonatomic)NSUserDefaults *usrSetting;
 @property (strong,nonatomic)UISwitch* notificationSwitch;
 @property (strong,nonatomic)UITableView* recordTable;
 @property (strong,nonatomic)UILabel *optionNameLabel;
+@property (strong,nonatomic)RecordManager *recordManager;
 @end
 
 @implementation ViewController
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.recordManager = [RecordManager sharedManager];
     self.optionNameLabel = [[UILabel alloc]init];
     self.optionNameLabel.text = @"Notification Mode";
     self.notificationSwitch = [[UISwitch alloc]init];
@@ -60,19 +62,26 @@
     }];
 
 
-
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return [[self.recordManager getRecords]count];
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    
+    NSString *date = [((MotionEvent*)[self.recordManager getRecords][indexPath.row]).created description];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
+    if (!cell) {
+        cell  = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_IDENTIFIER];
+    }
+    cell.textLabel.text = date;
+    
+    return cell;
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
- 
+    [self.recordTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

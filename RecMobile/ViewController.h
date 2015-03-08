@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
+#import "RecordManager.h"
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 

@@ -17,8 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"Registering for push notifications...");
-    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeNone categories:nil];
-    [[UIApplication sharedApplication]registerUserNotificationSettings:setting];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                         |UIUserNotificationTypeSound
+                                                                                         |UIUserNotificationTypeAlert) categories:nil];
+    [application registerUserNotificationSettings:settings];
+
     return YES;
 }
 #ifdef __IPHONE_8_0
@@ -39,8 +42,12 @@
 #endif
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"ReceiveRemoteNotification on foreground: %@", userInfo);
-    [UIApplication sharedApplication].applicationIconBadgeNumber += 1;
+    NSDictionary *aps = [userInfo objectForKey:@"aps"];
+    NSString *imagePath = [aps objectForKey:@"alert"];
+    NSLog(@"ReceiveRemoteNotification on foreground: %@",imagePath);
+    
+    // insert into database
+    [[RecordManager sharedManager]insertRecord:imagePath];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {

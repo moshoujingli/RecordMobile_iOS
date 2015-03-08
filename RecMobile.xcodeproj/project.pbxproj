@@ -15,8 +15,9 @@
 		6ADBAD821AA2B4BA00104B81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ADBAD811AA2B4BA00104B81 /* Images.xcassets */; };
 		6ADBAD851AA2B4BA00104B81 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ADBAD831AA2B4BA00104B81 /* LaunchScreen.xib */; };
 		6ADBAD911AA2B4BA00104B81 /* RecMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBAD901AA2B4BA00104B81 /* RecMobileTests.m */; };
-		6ADBAD9C1AA3DBE700104B81 /* MotionEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBAD9B1AA3DBE700104B81 /* MotionEvent.m */; };
-		6ADBAD9F1AA3DBE800104B81 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBAD9E1AA3DBE800104B81 /* Capture.m */; };
+		6ADBADA31AAB737700104B81 /* RecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA21AAB737700104B81 /* RecordManager.m */; };
+		6ADBADA61AAC033F00104B81 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA51AAC033F00104B81 /* Capture.m */; };
+		6ADBADA91AAC033F00104B81 /* MotionEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA81AAC033F00104B81 /* MotionEvent.m */; };
 		AD1A8030558A38913FE34117 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC4B0C64572DC271E59AF4A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +48,12 @@
 		6ADBAD8A1AA2B4BA00104B81 /* RecMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADBAD8F1AA2B4BA00104B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ADBAD901AA2B4BA00104B81 /* RecMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecMobileTests.m; sourceTree = "<group>"; };
-		6ADBAD9A1AA3DBE700104B81 /* MotionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionEvent.h; sourceTree = "<group>"; };
-		6ADBAD9B1AA3DBE700104B81 /* MotionEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEvent.m; sourceTree = "<group>"; };
-		6ADBAD9D1AA3DBE800104B81 /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
-		6ADBAD9E1AA3DBE800104B81 /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
+		6ADBADA11AAB737700104B81 /* RecordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordManager.h; sourceTree = "<group>"; };
+		6ADBADA21AAB737700104B81 /* RecordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordManager.m; sourceTree = "<group>"; };
+		6ADBADA41AAC033F00104B81 /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
+		6ADBADA51AAC033F00104B81 /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
+		6ADBADA71AAC033F00104B81 /* MotionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionEvent.h; sourceTree = "<group>"; };
+		6ADBADA81AAC033F00104B81 /* MotionEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEvent.m; sourceTree = "<group>"; };
 		E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +116,7 @@
 		6ADBAD701AA2B4BA00104B81 /* RecMobile */ = {
 			isa = PBXGroup;
 			children = (
+				6ADBADA01AAB730D00104B81 /* Model */,
 				6ADBAD751AA2B4BA00104B81 /* AppDelegate.h */,
 				6ADBAD761AA2B4BA00104B81 /* AppDelegate.m */,
 				6ADBAD7B1AA2B4BA00104B81 /* ViewController.h */,
@@ -121,10 +125,6 @@
 				6ADBAD811AA2B4BA00104B81 /* Images.xcassets */,
 				6ADBAD831AA2B4BA00104B81 /* LaunchScreen.xib */,
 				6ADBAD781AA2B4BA00104B81 /* RecMobile.xcdatamodeld */,
-				6ADBAD9D1AA3DBE800104B81 /* Capture.h */,
-				6ADBAD9E1AA3DBE800104B81 /* Capture.m */,
-				6ADBAD9A1AA3DBE700104B81 /* MotionEvent.h */,
-				6ADBAD9B1AA3DBE700104B81 /* MotionEvent.m */,
 				6ADBAD711AA2B4BA00104B81 /* Supporting Files */,
 			);
 			path = RecMobile;
@@ -154,6 +154,19 @@
 				6ADBAD8F1AA2B4BA00104B81 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6ADBADA01AAB730D00104B81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6ADBADA71AAC033F00104B81 /* MotionEvent.h */,
+				6ADBADA81AAC033F00104B81 /* MotionEvent.m */,
+				6ADBADA41AAC033F00104B81 /* Capture.h */,
+				6ADBADA51AAC033F00104B81 /* Capture.m */,
+				6ADBADA11AAB737700104B81 /* RecordManager.h */,
+				6ADBADA21AAB737700104B81 /* RecordManager.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ADBADA31AAB737700104B81 /* RecordManager.m in Sources */,
 				6ADBAD771AA2B4BA00104B81 /* AppDelegate.m in Sources */,
+				6ADBADA61AAC033F00104B81 /* Capture.m in Sources */,
+				6ADBADA91AAC033F00104B81 /* MotionEvent.m in Sources */,
 				6ADBAD7A1AA2B4BA00104B81 /* RecMobile.xcdatamodeld in Sources */,
-				6ADBAD9F1AA3DBE800104B81 /* Capture.m in Sources */,
-				6ADBAD9C1AA3DBE700104B81 /* MotionEvent.m in Sources */,
 				6ADBAD7D1AA2B4BA00104B81 /* ViewController.m in Sources */,
 				6ADBAD741AA2B4BA00104B81 /* main.m in Sources */,
 			);
