@@ -33,6 +33,7 @@
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"yyyyMMddHHmmss"];
         self.formatter = format;
+        self.formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     }
     return self;
 }

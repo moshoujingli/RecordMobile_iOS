@@ -48,6 +48,7 @@
     
     // insert into database
     [[RecordManager sharedManager]insertRecord:imagePath];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"refresh_list" object:self];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {

@@ -64,6 +64,10 @@
 
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+    self.dateFormatter.timeZone = [NSTimeZone systemTimeZone];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refresh) name:@"refresh_list" object:nil];
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -86,7 +90,7 @@
     cell.motionEvent = e;
     return cell;
 }
--(void)viewWillAppear:(BOOL)animated{
+-(void)refresh{
     [self.recordTable reloadData];
 }
 
