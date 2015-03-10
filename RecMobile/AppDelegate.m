@@ -16,6 +16,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSDictionary* userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    NSLog(@"Payload: %@", userInfo);
+    
+    NSString *imagePath = [self getImageURLFromUserInfo:userInfo];
+    if (imagePath) {
+        //need insert
+        [[RecordManager sharedManager]insertRecord:imagePath];
+    }
+    
+    
+    
     NSLog(@"Registering for push notifications...");
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
                                                                                          |UIUserNotificationTypeSound
@@ -42,13 +54,17 @@
 #endif
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSDictionary *aps = [userInfo objectForKey:@"aps"];
-    NSString *imagePath = [aps objectForKey:@"alert"];
-    NSLog(@"ReceiveRemoteNotification on foreground: %@",imagePath);
     
+    NSString *imagePath = [self getImageURLFromUserInfo:userInfo];
     // insert into database
     [[RecordManager sharedManager]insertRecord:imagePath];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"refresh_list" object:self];
+}
+-(NSString *)getImageURLFromUserInfo:(NSDictionary *)userInfo{
+    NSDictionary *aps = [userInfo objectForKey:@"aps"];
+    NSString *imagePath = [aps objectForKey:@"alert"];
+    NSLog(@"ReceiveRemoteNotification on foreground: %@",imagePath);
+    return imagePath;
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
