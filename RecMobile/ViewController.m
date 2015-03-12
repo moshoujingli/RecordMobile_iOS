@@ -98,6 +98,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RMImageDisplayViewController *imageController = [storyboard instantiateViewControllerWithIdentifier:@"displayController"];
+    imageController.e = [self.recordManager getRecords][indexPath.row];
+    [self presentViewController:imageController animated:YES completion:nil];
+
+}
 - (IBAction)notificationSwitchChanged:(UISwitch *)sender {
     [self.usrSetting setBool:sender.on forKey:@"ntfOn"];
     if (sender.on) {

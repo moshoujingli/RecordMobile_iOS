@@ -19,6 +19,7 @@
 		6ADBADA61AAC033F00104B81 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA51AAC033F00104B81 /* Capture.m */; };
 		6ADBADA91AAC033F00104B81 /* MotionEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADA81AAC033F00104B81 /* MotionEvent.m */; };
 		6ADBADAD1AACA46100104B81 /* RecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */; };
+		6ADBADB01AAF4CFC00104B81 /* RMImageDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBADAF1AAF4CFC00104B81 /* RMImageDisplayViewController.m */; };
 		AD1A8030558A38913FE34117 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC4B0C64572DC271E59AF4A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		6ADBADA81AAC033F00104B81 /* MotionEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEvent.m; sourceTree = "<group>"; };
 		6ADBADAB1AACA46100104B81 /* RecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTableViewCell.h; sourceTree = "<group>"; };
 		6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewCell.m; sourceTree = "<group>"; };
+		6ADBADAE1AAF4CFC00104B81 /* RMImageDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMImageDisplayViewController.h; sourceTree = "<group>"; };
+		6ADBADAF1AAF4CFC00104B81 /* RMImageDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMImageDisplayViewController.m; sourceTree = "<group>"; };
 		E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +126,8 @@
 				6ADBADA01AAB730D00104B81 /* Model */,
 				6ADBAD751AA2B4BA00104B81 /* AppDelegate.h */,
 				6ADBAD761AA2B4BA00104B81 /* AppDelegate.m */,
+				6ADBADAE1AAF4CFC00104B81 /* RMImageDisplayViewController.h */,
+				6ADBADAF1AAF4CFC00104B81 /* RMImageDisplayViewController.m */,
 				6ADBAD7B1AA2B4BA00104B81 /* ViewController.h */,
 				6ADBAD7C1AA2B4BA00104B81 /* ViewController.m */,
 				6ADBAD7E1AA2B4BA00104B81 /* Main.storyboard */,
@@ -325,6 +330,7 @@
 				6ADBAD7A1AA2B4BA00104B81 /* RecMobile.xcdatamodeld in Sources */,
 				6ADBAD7D1AA2B4BA00104B81 /* ViewController.m in Sources */,
 				6ADBAD741AA2B4BA00104B81 /* main.m in Sources */,
+				6ADBADB01AAF4CFC00104B81 /* RMImageDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

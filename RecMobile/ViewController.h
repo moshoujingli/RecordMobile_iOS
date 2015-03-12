@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "RecordManager.h"
 #import "RecordTableViewCell.h"
+#import "RMImageDisplayViewController.h"
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 
