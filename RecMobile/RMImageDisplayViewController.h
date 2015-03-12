@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RecordManager.h"
-
+#import "Masonry.h"
 @interface RMImageDisplayViewController : UIViewController
 @property (strong,nonatomic)MotionEvent *e;
 @end
