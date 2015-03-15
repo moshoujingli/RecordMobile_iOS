@@ -7,11 +7,13 @@
 //
 
 #import "RMImageDisplayViewController.h"
+#define IMAGE_CELL @"imagecell"
 
 @interface RMImageDisplayViewController ()
-@property (strong, nonatomic)UIScrollView *imageContainer;
+@property (strong, nonatomic)UITableView *imageContainer;
 @property (strong,nonatomic)UIButton *backBtn;
 @property (strong,nonatomic)UIProgressView *processView;
+@property (strong,nonatomic)NSArray *images;
 @end
 
 @implementation RMImageDisplayViewController
@@ -20,8 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIButton *backBtn = [[UIButton alloc]init];
-    UIScrollView *container = [[UIScrollView alloc]init];
+    UITableView *container = [[UITableView alloc]init];
     UIProgressView *progressView = [[UIProgressView alloc]init];
+    
+    container.dataSource = self;
+    container.delegate = self;
     
     [backBtn setTitle:@"Back" forState:UIControlStateNormal];
     [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -49,9 +54,41 @@
         make.bottom.equalTo(self.backBtn.mas_top);
     }];
 
-    //start download
-    //
+}
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.images?self.images.count:0;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return [[UIScreen mainScreen]bounds].size.height-100;
+    UIImage *image = self.images[indexPath.row];
+    return image.size.height;
+}
+
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:IMAGE_CELL];
+    }
+    [cell.contentView addSubview:[[UIImageView alloc]initWithImage:self.images[indexPath.row]] ];
+    return cell;
+}
+-(void)viewDidAppear:(BOOL)animated{
+    
+    self.images = nil;
+    
+    //start download
+    self.processView.progress = 0.0;
+    [[RecordManager sharedManager]loadImageInEvent:self.e progress:^(NSUInteger byteReaded, NSUInteger byteDecompressed, NSUInteger total) {
+        self.processView.progress = (byteReaded+byteDecompressed)/((float)total);
+    } success:^(NSArray *images) {
+        self.images = images;
+        [self.imageContainer reloadData];
+    } failure:^(NSError *error) {
+        [self.backBtn setTitle:@"Download Failed..." forState:UIControlStateNormal];
+    }];
+    [self.imageContainer reloadData];
 }
 -(void)backPushed:(UIButton*)backBtn{
     [self dismissViewControllerAnimated:YES completion:nil];

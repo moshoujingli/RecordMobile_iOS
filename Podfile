@@ -2,7 +2,7 @@
 platform :ios, '7.0'
 pod "AFAmazonS3Manager"
 pod "Masonry"
-
+pod "SSZipArchive"
 target 'RecMobile' do
 
 end

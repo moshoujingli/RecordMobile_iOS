@@ -60,6 +60,7 @@
 		6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewCell.m; sourceTree = "<group>"; };
 		6ADBADAE1AAF4CFC00104B81 /* RMImageDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMImageDisplayViewController.h; sourceTree = "<group>"; };
 		6ADBADAF1AAF4CFC00104B81 /* RMImageDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMImageDisplayViewController.m; sourceTree = "<group>"; };
+		6ADBADB21AB4280100104B81 /* KeySetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeySetting.h; sourceTree = "<group>"; };
 		E8A4925826111B314ACB18E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +123,7 @@
 		6ADBAD701AA2B4BA00104B81 /* RecMobile */ = {
 			isa = PBXGroup;
 			children = (
+				6ADBADB11AB427B000104B81 /* PrivateSetting */,
 				6ADBADAA1AACA41E00104B81 /* TableComp */,
 				6ADBADA01AAB730D00104B81 /* Model */,
 				6ADBAD751AA2B4BA00104B81 /* AppDelegate.h */,
@@ -185,6 +187,14 @@
 				6ADBADAC1AACA46100104B81 /* RecordTableViewCell.m */,
 			);
 			name = TableComp;
+			sourceTree = "<group>";
+		};
+		6ADBADB11AB427B000104B81 /* PrivateSetting */ = {
+			isa = PBXGroup;
+			children = (
+				6ADBADB21AB4280100104B81 /* KeySetting.h */,
+			);
+			name = PrivateSetting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
